@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Vue Js Todo App</title>
+</head>
+<body>
+<div id="app">
+	<h2>Todos</h2>
+	<ul v-if="showTodos">
+		<li v-for="todo in todos">
+			{{ todo.title }}
+		</li>
+	</ul>
+	<p v-else>
+		No Todos for you today
+	</p>
+	<p>
+	Showing Todos or not: {{ showTodos }}
+		<input type="checkbox" v-model="showTodos">
+	</p>
+	<p>
+		<input type="text" v-model="todoText" v-on:keyup.esc="clearTodo" v-on:keyup.enter="createTodo">
+	</p>
+	<p>
+		Count = {{ count }}
+		<button type="button" v-on:click="increaseCounter">Increase count</button>
+	</p>
+</div>
+
+<script src="js/vue.js" charset="utf-8"></script>
+<script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
