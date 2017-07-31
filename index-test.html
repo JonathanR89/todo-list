@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Vue Js Todo App</title>
+</head>
+<body>
+<div id="app">
+	<p>{{ message }}</p>
+	<input type="text" v-model="message">
+	<p>
+		<a v-bind:href="anyLink">Link to Google</a>
+	</p>
+	<h2>Todos</h2>
+	<ul v-if="showTodos">
+		<li v-for="todo in todos">
+			{{ todo.title }}
+		</li>
+	</ul>
+	<p v-else>
+		No Todos for you today
+	</p>
+	<p>
+	Showing Todos or not: {{ showTodos }}
+		<input type="checkbox" v-model="showTodos">
+	</p>
+</div>
+
+<script src="js/vue.js" charset="utf-8"></script>
+<script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
