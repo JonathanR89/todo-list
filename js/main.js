@@ -5,7 +5,7 @@ var TodoComponent = Vue.extend({
 		}
 	},
 	props: ['todo'],
-	template: '<div><span v-on:click="clicked" v-show="!inEditMode">{{ todo.title }}</span><input v-on:keyup.enter="" v-model="todo.title" v-show="inEditMode"/></div>',
+	template: '<div><span v-on:click="clicked" v-show="!inEditMode">{{ todo.title }}</span><input v-on:keyup.enter="saved" v-model="todo.title" v-show="inEditMode"/></div>',
 	methods: {
 		clicked: function(){
 			this.inEditMode = true;
