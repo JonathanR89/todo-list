@@ -8,6 +8,11 @@ var myModel = {
 	]
 };
 
+Vue.component('sitepoint', {
+	props: ['chanel'],
+	template: '<a href="https://www.sitepoint.com/{{ channel | lowercase }}">{{ channel }} @Sitepoint</span>',
+});
+
 var myViewModel = new Vue({
 	el: '#my_view',
 	data: myModel,
@@ -20,6 +25,3 @@ var myViewModel = new Vue({
 	}
 });
 
-Vue.component('sitepoint', {
-	template: '<a href="https://www.sitepoint.com">Sitepoint</span>'
-});
