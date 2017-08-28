@@ -67,10 +67,29 @@
 		</ol>
 	</div>
 </div>
+
+<div class="container">
+	<div class="row">
+		<div id="message" class="col-md-6 col-md-offset-3">
+			<span v-once>Message: {{ msg }}</span>
+			<button class="btn btn-primary" v-bind:disabled="isBUttonDisabled">Button</button>
+
+
+		</div>
+	</div>
+</div>
 </div>
 
 
 <script>
+
+var message = new Vue({
+	el: '#message',
+	data: {
+		msg: 'plain message'
+	}
+})
+
 	var app = new Vue({
 		el: '#app',
 		data: {
@@ -139,6 +158,20 @@
     		]
     	}
     })
+
+    // var data = { a: 1 }
+    // var vm = new Vue({
+    // 	el: '#example';
+    // 	data: data
+    // })
+
+    // vm.$data === // -> true
+    // vm.$el === document.getElementById('example') // -> true
+
+    // // $watch is an instance method
+    // vm.$watch( 'a', function (newVal, oldVal) {
+    // 	// this callback will be called when `vm.a` changes
+    // })
 </script>
 </body>
 </html>
